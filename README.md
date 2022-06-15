@@ -1,6 +1,6 @@
 # Spring Data Elasticsearch (Spring Boot + Elasticsearch)
 
-##Documentation
+## Documentation
 
 Run the application and swagger UI for testing APIs can be accessed here: http://localhost:8080/swagger-ui.html
 
