@@ -14,6 +14,8 @@ import java.util.List;
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ElasticsearchClientController {
 
+    private static final List<String> fields = List.of("title", "content");
+
     @Autowired
     private ElasticsearchClientService elasticsearchClientService;
 
@@ -25,5 +27,10 @@ public class ElasticsearchClientController {
     @PostMapping(value = "/should", produces = "application/json")
     public List<Article> fetchArticlesWithShouldQuery(@RequestBody ArticleQuery articleQuery) throws IOException {
         return elasticsearchClientService.fetchArticlesWithShouldQuery(articleQuery);
+    }
+
+    @GetMapping(value = "/{term}", produces = "application/json")
+    public List<Article> textSearch(@PathVariable String term) throws IOException {
+        return elasticsearchClientService.textSearch(fields, term, 10);
     }
 }
