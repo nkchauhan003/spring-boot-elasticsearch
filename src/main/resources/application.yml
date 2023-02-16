@@ -1,0 +1,16 @@
+# ELASTICSEARCH
+elasticsearch:
+  host: 127.0.0.1
+  port: 9200
+
+# SWAGGER
+springdoc:
+  swagger-ui.path: /swagger-ui.html
+  api-docs.path: /v1/api-docs
+# Logging
+logging:
+  file:
+    name: /Users/nageshchauhan/logs/sbe.log
+  level:
+    root: DEBUG
+    com.cb: DEBUG
